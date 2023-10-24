@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+void imprimirFibonacci(int n) {
+    if (n <= 0) {
+        return;
+    }
+    
+    imprimirFibonacci(n - 1);
+    printf("%d ", fibonacci(n - 1));
+}
+
+int main() {
+    int n;
+    printf("Numero de elementos de la serie Fibonacci: ");
+    scanf("%d", &n);
+    
+    printf("Elementos de la serie:\n");
+    imprimirFibonacci(n);
+    
+    return 0;
+}
